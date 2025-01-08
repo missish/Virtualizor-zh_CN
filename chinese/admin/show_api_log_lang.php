@@ -1,0 +1,318 @@
+<?php
+
+//////////////////////////////////////////////////////////////
+//===========================================================
+// show_api_log_lang.php
+//===========================================================
+// SOFTACULOUS VIRTUALIZOR
+// 版本 : 1.0
+// 灵感来自于成为最好的愿望
+// ----------------------------------------------------------
+// 开始者: Alons
+// 日期: 2010年3月8日
+// 时间: 23:00 小时
+// 网站: https://www.virtualizor.com/ (SOFTACULOUS VIRTUALIZOR)
+// ----------------------------------------------------------
+// 请阅读使用条款 https://www.virtualizor.com
+// ----------------------------------------------------------
+//===========================================================
+// (c)Softaculous Ltd.
+//===========================================================
+//////////////////////////////////////////////////////////////
+
+if(!defined('VIRTUALIZOR')){
+
+	die('非法访问');
+
+}
+
+$l['<title>'] = 'API 日志';
+$l['<title_create>'] = '创建 API 凭证';
+$l['with_selected'] = '选中项操作';
+$l['api_details'] = 'API 信息';
+$l['api_id'] = 'API ID';
+$l['delete_pair'] = '删除';
+$l['usertype'] = '用户类型';
+$l['create'] = '允许创建 VPS';
+$l['delete'] = '允许删除 VPS';
+$l['view'] = '仅查看 VPS 信息';
+$l['delete_successful'] = '删除成功';
+$l['not_allowed'] = '您没有权限创建 API 凭证。';
+$l['go'] = '执行';
+$l['all'] = '全部';
+$l['none'] = '选择用户';
+$l['ip_value'] = 'IP 地址';
+$l['ip_values'] = 'IP 地址';
+$l['select_user'] = '选择管理员用户';
+$l['added'] = 'API 凭证生成成功！返回 <a href="'.$globals['index'].'act=list_api">API 凭证列表</a>';
+$l['added_fail'] = '生成 API 凭证失败。';
+$l['select_action'] = '操作';
+$l['sub_but']= '生成 API 凭证';
+$l['no_api_action']= '未选择 API 操作';
+$l['no_ip']= '请输入有效的 IP 地址';
+$l['no_ip_none']= '未找到 IP 地址';
+$l['root'] = '所有者';
+$l['no_acl_record'] = '未找到此用户的 ACL 记录！';
+$l['no_info'] = '未找到 API 日志！';
+$l['api_key'] = 'API 密钥';
+$l['api_val'] = 'API 密码';
+$l['api_actions'] = '操作';
+$l['taskid'] = '任务 ID';
+$l['uid'] = '用户邮箱';
+$l['from_ip'] = '来源 IP';
+$l['time'] = '时间';
+$l['data'] = '额外信息';
+$l['search_id'] = 'VPS ID';
+$l['action_create'] = '创建 API';
+$l['action_delete'] = '删除 API';
+$l['action_edit'] = '编辑 API';
+$l['state_true'] = '成功';
+$l['state_false'] = '失败';
+$l['action'] = '操作';
+$l['status'] = '状态';
+$l['submit'] = '提交';
+$l['src_ip'] = '来源 IP';
+$l['act_new_api'] = '创建新的 API 凭证';
+$l['act_edit_api'] = '编辑 API 操作';
+$l['act_delete_api'] = '删除 API 凭证';
+$l['act_reset_api'] = '成功重置 API 凭证';
+$l['act_cat_vs'] = VM_LONG;
+$l['act_cat_ippools'] = 'IP 池';
+$l['act_cat_servers'] = '服务器和服务器组';
+$l['act_cat_storage'] = '存储';
+$l['act_volumes'] = '卷';
+$l['act_cat_backups'] ='服务器和 '.VM_SHORT.' 备份';
+$l['act_cat_plans'] = '计划';
+$l['act_cat_users'] = '用户';
+$l['act_cat_media'] = '媒体和媒体组';
+$l['act_cat_config'] = '配置';
+$l['act_cat_pdns'] = 'PowerDNS';
+$l['act_cat_procs'] = '进程和服务';
+$l['act_cat_logs'] = '日志';
+$l['act_cat_haproxy'] = '域名转发';
+$l['act_cluster_statistics'] = '查看集群统计';
+$l['act_server_statistics'] = '查看服务器统计';
+$l['act_vs'] = '列出 '.VM_LONG;
+$l['act_vsresources'] = '查看 '.VM_SHORT.' 资源';
+$l['act_addvs'] = '添加 '.VM_LONG;
+$l['act_rebuildvs'] = '重建 '.VM_LONG;
+$l['act_editvs'] = '编辑 '.VM_LONG;
+$l['act_deletevs'] = '删除 '.VM_LONG;
+$l['act_startvs'] = '启动 '.VM_LONG;
+$l['act_stopvs'] = '停止 '.VM_LONG;
+$l['act_restartvs'] = '重启 '.VM_LONG;
+$l['act_poweroffvs'] = '关机 '.VM_LONG;
+$l['act_suspendvs'] = '挂起 '.VM_LONG;
+$l['act_unsuspendvs'] = '解除挂起 '.VM_LONG;
+$l['act_vnc'] = VM_LONG.' VNC';
+$l['act_migrate'] = '迁移 '.VM_LONG;
+$l['act_ippool'] = '查看 IP 池';
+$l['act_addippool'] = '添加 IP 池';
+$l['act_editippool'] = '编辑 IP 池';
+$l['act_deleteippool'] = '删除 IP 池';
+$l['act_ips'] = '查看 IP';
+$l['act_addips'] = '添加 IP';
+$l['act_editips'] = '编辑 IP';
+$l['act_deleteips'] = '删除 IP';
+$l['act_servers'] = '查看服务器';
+$l['act_addserver'] = '添加服务器';
+$l['act_editserver'] = '编辑服务器';
+$l['act_deleteserver'] = '删除服务器';
+$l['act_sg'] = '查看服务器组';
+$l['act_addsg'] = '添加服务器组';
+$l['act_editsg'] = '编辑服务器组';
+$l['act_deletesg'] = '删除服务器组';
+$l['act_rebootserver'] = '重启服务器';
+$l['act_manageserver'] = '管理服务器';
+$l['act_terminal'] = '终端';
+$l['act_storage'] = '查看存储';
+$l['act_addstorage'] = '添加存储';
+$l['act_editstorage'] = '编辑存储';
+$l['act_deletestorage'] = '删除存储';
+$l['act_databackup'] = '查看数据库备份';
+$l['act_performdatabackup'] = '执行数据库备份';
+$l['act_dldatabackup'] = '下载数据库备份';
+$l['act_deletedatabackup'] = '删除数据库备份';
+$l['act_vpsbackupsettings'] = '编辑 '.VM_SHORT.' 备份设置';
+$l['act_vpsbackups'] = '查看 '.VM_SHORT.' 备份';
+$l['act_restorevpsbackup'] = '恢复 '.VM_SHORT.' 备份';
+$l['act_deletevpsbackup'] = '删除 '.VM_SHORT.' 备份';
+$l['act_backupservers'] = '查看备份服务器';
+$l['act_addbackupserver'] = '添加备份服务器';
+$l['act_editbackupservsers'] = '编辑备份服务器';
+$l['act_deletebackupserver'] = '删除备份服务器';
+$l['act_plans'] = '查看计划';
+$l['act_addplan'] = '添加计划';
+$l['act_editplan'] = '编辑计划';
+$l['act_deleteplan'] = '删除计划';
+$l['act_dnsplans'] = '查看 DNS 计划';
+$l['act_adddnsplan'] = '添加 DNS 计划';
+$l['act_editdnsplan'] = '编辑 DNS 计划';
+$l['act_deletednsplan'] = '删除 DNS 计划';
+$l['act_add_dnsrecord'] = '添加 DNS 记录';
+$l['act_users'] = '查看用户';
+$l['act_adduser'] = '添加用户';
+$l['act_edituser'] = '编辑用户';
+$l['act_deleteuser'] = '删除用户';
+$l['act_suspend_user'] = '挂起用户';
+$l['act_unsuspend_user'] = '解除挂起用户';
+$l['act_list_api'] = '列出 API 凭证';
+$l['act_create_api'] = '创建 API 凭证';
+$l['act_api_credential_edit'] = '编辑 API 凭证';
+$l['act_show_api_log'] = 'API 日志';
+$l['act_ostemplates'] = '查看模板';
+$l['act_os'] = '查看模板浏览器';
+$l['act_addtemplate'] = '添加模板';
+$l['act_edittemplate'] = '编辑模板';
+$l['act_deletetemplate'] = '删除模板';
+$l['act_createtemplate'] = '创建模板';
+$l['act_iso'] = '查看 ISO 列表';
+$l['act_addiso'] = '添加 ISO';
+$l['act_editiso'] = '编辑 ISO';
+$l['act_deleteiso'] = '删除 ISO';
+$l['act_mg'] = '查看媒体组';
+$l['act_addmg'] = '添加媒体组';
+$l['act_editmg'] = '编辑媒体组';
+$l['act_deletemg'] = '删除媒体组';
+$l['act_list_distros'] = '查看发行版列表';
+$l['act_add_distro'] = '添加发行版';
+$l['act_synciso'] = '同步 ISO';
+$l['act_config'] = '编辑常规设置';
+$l['act_emailsettings'] = '编辑邮件设置';
+$l['act_adminacl'] = '查看管理员 ACL';
+$l['act_add_admin_acl'] = '添加管理员 ACL';
+$l['act_edit_admin_acl'] = '编辑管理员 ACL';
+$l['act_delete_admin_acl'] = '删除管理员 ACL';
+$l['act_serverinfo'] = '查看服务器信息';
+$l['act_licenseinfo'] = '查看许可证信息';
+$l['act_hostname'] = '查看主机名';
+$l['act_changehostname'] = '编辑主机名';
+$l['act_maintenance'] = '维护模式';
+$l['act_kernconfig'] = '编辑内核配置';
+$l['act_defaultvsconf'] = '默认 '.VM_SHORT.' 配置';
+$l['act_twofactauth'] = '双因素认证';
+$l['act_updates'] = '执行更新';
+$l['act_emailtemps'] = '查看邮件模板';
+$l['act_editemailtemps'] = '编辑邮件模板';
+$l['act_ssl'] = '查看 SSL 文件';
+$l['act_editssl'] = '编辑 SSL 文件';
+$l['act_createssl'] = '创建 SSL 证书';
+$l['act_firewall'] = '管理防火墙';
+$l['act_importvs'] = '导入 VS';
+$l['act_phpmyadmin'] = '访问 PhpMyAdmin';
+$l['act_ssh'] = '访问 SSH';
+$l['act_pdns'] = '查看 DNS 服务器';
+$l['act_managepdns'] = '管理 DNS 服务器';
+$l['act_addpdns'] = '添加 DNS 服务器';
+$l['act_editpdns'] = '编辑 DNS 服务器';
+$l['act_deletepdns'] = '删除 DNS 服务器';
+$l['act_rdns'] = '添加反向 DNS 区域';
+$l['act_procs'] = '管理进程';
+$l['act_services'] = '管理服务';
+$l['act_webserver'] = '重启 Web 服务器';
+$l['act_network'] = '重启网络服务';
+$l['act_sendmail'] = '重启邮件服务器';
+$l['act_mysqld'] = '重启 MySQL';
+$l['act_iptables'] = '重启 IPTables';
+$l['act_logs'] = '查看日志';
+$l['act_deletelogs'] = '删除日志';
+$l['act_userlogs'] = '查看用户日志';
+$l['act_deleteuserlogs'] = '删除用户日志';
+$l['act_loginlogs'] = '查看登录日志';
+$l['act_deleteloginlogs'] = '删除登录日志';
+$l['act_iplogs'] = '查看 IP 日志';
+$l['act_deliplogs'] = '删除 IP 日志';
+$l['act_checkall'] = '全选';
+$l['act_save'] = '保存';
+$l['act_recipes'] = '查看配方';
+$l['act_addrecipe'] = '添加配方';
+$l['act_editrecipe'] = '编辑配方';
+$l['act_backup_plans'] = '列出备份计划';
+$l['act_addbackup_plan'] = '添加备份计划';
+$l['act_editbackup_plan'] = '编辑备份计划';
+$l['act_deletebackup_plan'] = '删除备份计划';
+$l['act_haproxy'] = '域名转发';
+$l['act_euiso'] = '最终用户 ISO';
+$l['act_orphaneddisk'] = '列出孤立磁盘';
+$l['act_deleteorphaneddisk'] = '删除孤立磁盘';
+$l['act_ha'] = '高可用性';
+$l['act_load_balancer'] = '负载均衡器';
+$l['act_manage_load_balancer'] = '管理负载均衡器';
+$l['act_multivirt'] = '多虚拟化'; 
+$l['act_webuzo'] = 'Webuzo 设置';
+$l['act_billing'] = '计费设置';
+$l['act_resource_pricing'] = '资源计费';
+$l['act_invoices'] = '发票';
+$l['act_transactions'] = '交易';
+$l['act_addinvoice'] = '添加发票';
+$l['act_addtransaction'] = '添加交易';
+$l['act_performance'] = '服务器监控';
+
+// 最终用户调用
+$l['act_vpsmanage'] = '仪表盘';
+$l['act_editapi'] = '编辑 API';
+$l['act_sso'] = '单点登录';
+$l['act_apps'] = '应用程序';
+$l['act_webuzo'] = 'Webuzo';
+$l['act_editsshkey'] = '编辑 SSH 密钥';
+$l['act_addsshkey'] = '添加 SSH 密钥';
+$l['act_sshkeys'] = 'SSH 密钥';
+$l['act_editbackupserver'] = '编辑备份服务器';
+$l['act_addbackupserver'] = '添加备份服务器';
+$l['act_backupservers'] = '备份服务器';
+$l['act_addiso'] = '添加 ISO';
+$l['act_euiso'] = '最终用户 ISO';
+$l['act_managevdf'] = '管理 VDF';
+$l['act_twofactauth'] = '双因素认证';
+$l['act_tasks'] = '列出任务';
+$l['act_ctasks'] = '列出任务';
+$l['act_self_shutdown'] = '自动关机';
+$l['act_managesubnets'] = '管理 IPv6 子网';
+$l['act_managezone'] = '管理 DNS 区域';
+$l['act_payment'] = '支付';
+$l['act_invoices'] = '列出发票';
+$l['act_billing'] = '计费';
+$l['act_pdns'] = 'PowerDNS';
+$l['act_listrecipes'] = '列出配方';
+$l['act_cloudres'] = '云资源';
+$l['act_create'] = '创建 '.VM_SHORT;
+$l['act_hvmsettings'] = VM_SHORT.' 的 HVM 设置';
+$l['act_apikey'] = '列出 API 密钥';
+$l['act_ips'] = '列出 IP';
+$l['act_vncpass'] = 'VNC 密码';
+$l['act_vnc'] = 'VNC 访问';
+$l['act_listvs'] = '列出 '.VM_SHORT;
+$l['act_usersettings'] = '用户设置';
+$l['act_rdns'] = '反向 DNS';
+$l['act_userpassword'] = '用户密码';
+$l['act_edituser'] = '编辑用户';
+$l['act_adduser'] = '添加用户';
+$l['act_profile'] = '个人资料';
+$l['act_userpanel'] = '用户仪表盘';
+$l['act_users'] = '列出用户';
+$l['act_hostname'] = '更改主机名';
+$l['act_controlpanel'] = '控制面板';
+$l['act_changepassword'] = '更改密码';
+$l['act_bandwidth'] = '带宽';
+$l['act_logs'] = '日志';
+$l['act_system_alerts'] = '系统警报';
+$l['act_statuslogs'] = '状态日志';
+$l['act_console'] = '控制台访问';
+$l['act_ssh'] = 'SSH 列表';
+$l['act_performance'] = '性能';
+$l['act_services'] = '服务';
+$l['act_ram'] = '内存';
+$l['act_cpu'] = 'CPU';
+$l['act_monitor'] = '监控';
+$l['act_ostemplate'] = '操作系统模板';
+$l['act_rescue'] = '救援模式';
+$l['act_poweroff'] = '关机';
+$l['act_start'] = '启动';
+$l['act_restart'] = '重启';
+$l['act_stop'] = '停止';
+$l['act_register'] = '注册';
+$l['act_login'] = '登录';
+$l['act_editvm'] = '编辑虚拟机';
+$l['act_dashboard'] = '仪表盘';
+$l['act_return_session'] = '返回会话';
+?>
